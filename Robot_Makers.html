@@ -1,14 +1,95 @@
+<!-- CHAP10 HTML --> 
 <!DOCTYPE html>
 <html>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
 <head>
-
-	<meta charset="utf-8">
-	<title>Robot_Makers</title>
-	<link rel="stylesheet" type="text/css" href="">
-
+    <button id="click">Cliquez ici </button>
+    <title></title>
 </head>
 <body>
-	
 
+<div id="saisieMots">
+    <ul>
+        <li><input type="text" id="iAdj1"     /><br>Adjectif</li>
+        <li><input type="text" id="iVerbeInf" /><br>Verbe (infinitif)</li>
+        <li><input type="text" id="iSalle1"   /><br>Pièce de maison</li>
+        <li><input type="text" id="iSubstPl"  /><br>Substantif pluriel</li>
+        <li><input type="text" id="iCouleur"  /><br>Couleur</li>
+        <li><input type="text" id="iVerbePS1" /><br>Verbe (imparfait)</li>
+        <li><input type="text" id="iABoire"   /><br>Boisson</li>
+        <li><input type="text" id="iMusik"    /><br>Genre de musique</li>  
+        <li><input type="text" id="iSalle2"   /><br>Autre lieu</li>
+        <li><input type="text" id="iExcla"    /><br>Exclamation</li> 
+        <li><input type="text" id="iVerbePS2" /><br>Verbe (participe présent)</li>
+        <li><input type="text" id="iAdj2"     /><br>Adjectif</li>
+        <li><input type="text" id="iAnimal"   /><br>Animal</li>
+        <li><input type="text" id="iVille"    /><br>Ville</li>
+        <li><input type="text" id="iDiplome"  /><br>Nom du prix</li>
+    </ul>
+  <div id="divBouton">
+    <button id="btnRemplacer">Remplacer tout</button>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript">
+    var vBtnRemplacer = document.getElementById("btnRemplacer");
+vBtnRemplacer.addEventListener("click", fRemplacer);
+
+function fRemplacer() {
+    var divHistoire = document.getElementById("divHistoire");
+    var vAdj1     = "<span class='remplacement'>"+ document.getElementById("iAdj1").value + "</span>";
+    var vVerbeInf = "<span class='remplacement'>"+ document.getElementById("iVerbeInf").value + "</span>";
+    var vSalle1   = "<span class='remplacement'>"+ document.getElementById("iSalle1").value + "</span>";
+    var vSubstPl  = "<span class='remplacement'>"+ document.getElementById("iSubstPl").value + "</span>";
+    var vCouleur  = "<span class='remplacement'>"+ document.getElementById("iCouleur").value + "</span>";
+    var vVerbePS1 = "<span class='remplacement'>"+ document.getElementById("iVerbePS1").value + "</span>";
+    var vABoire   = "<span class='remplacement'>"+ document.getElementById("iABoire").value + "</span>";
+    var vMusik    = "<span class='remplacement'>"+ document.getElementById("iMusik").value + "</span>";
+    var vSalle2   = "<span class='remplacement'>"+ document.getElementById("iSalle2").value + "</span>";
+    var vExcla    = "<span class='remplacement'>"+ document.getElementById("iExcla").value + "</span>";
+    var vVerbePS2 = "<span class='remplacement'>"+ document.getElementById("iVerbePS2").value + "</span>";
+    var vAdj2     = "<span class='remplacement'>"+ document.getElementById("iAdj2").value + "</span>";
+    var vAnimal   = "<span class='remplacement'>"+ document.getElementById("iAnimal").value + "</span>";
+    var vVille    = "<span class='remplacement'>"+ document.getElementById("iVille").value + "</span>";
+    var vDiplome  = "<span class='remplacement'>"+ document.getElementById("iDiplome").value + "</span>";
+   
+    var vHistoire = "<h1>La danse de Makers</h1>";
+    vHistoire += "Un " + vAdj1 + " jour, Makers était en train de ";
+    vHistoire += vVerbeInf + " dans le/la " + vSalle1 + ". ";
+    vHistoire += "Il lisait un livre sur " + vSubstPl + " " + vCouleur + ".<br><br>";
+    vHistoire += "Pendant qu'il " + vVerbePS1 + " sa " + vABoire + ", ";
+    vHistoire += "il entendit de la " + vMusik + " musique venant de " + vSalle2 + ".<br><br>";
+    vHistoire += vExcla + "! cria t-il, tout en " + vVerbePS2 + " ";
+    vHistoire += "les escaliers pour rejoindre la " + vAdj2 + " party.<br><br>";
+    vHistoire += "Makers a dansé la " + vAnimal + " Dance et ";
+    vHistoire += "le " + vVille + " Shake. Il a gagné le prix de danse  ";
+    vHistoire += vDiplome + ".<br><br>";
+   
+    divHistoire.innerHTML = vHistoire;
+        
+}
+
+$(document).ready(function () {
+    var obj = document.createElement("audio");
+    obj.src = "son.mp4";
+    obj.volume = 1;
+    obj.autoPlay = false;
+    obj.preLoad = true;
+
+    $("#click").click(function () {
+        obj.play();
+    });
+});
+
+
+
+
+</script>
+
+<div id="divHistoire"></div>
 </body>
 </html>

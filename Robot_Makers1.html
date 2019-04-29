@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Makers</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div id="saisieMots">
+		<ul>
+			
+			<li><input type="text" id="iAdj1"/> <br>Adjectif</li>
+		</ul>
+	
+	<div id="divBouton">
+		<button id="btnRemplacer">Remplacer tout</button>
+	</div>
+</div>
+<div id="divHistoire"></div>
+
+<script type="text/javascript">
+
+
+	var vBtnRemplacer = document.getElementById("btnRemplacer");
+	vBtnRemplacer.addEventListener("click",fRemplacer);
+
+
+	function fRemplacer(){
+
+		var divHistoire = document.getElementById("divHistoire");
+		var vAdj1 = "<span class='remplacement'>"+ document.getElementById("iAdj1").value +"</span>";
+		/*autre defenitions de variables a venir */
+
+		var vHistoire = "<h1>La dance de Makers</h1>";
+		vHistoire += " Un " + vAdj1 + "jour, Makers était en train de";
+		divHistoire.innerHTML = vHistoire;
+	}
+	
+
+
+
+
+</script>
+
+</body>
+</html>
